@@ -38,7 +38,7 @@ const UpdateEmp = () => {
 
  const onSubmit = async (formData) => {
   const res = await fetch(
-    `http://localhost:4000/api/v1/updateemp/${id}`,
+    `https://employee-rear.onrender.com/api/v1/updateemp/${id}`,
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },

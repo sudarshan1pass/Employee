@@ -6,7 +6,7 @@ const cors=require('cors');
 const port = process.env.PORT || 4000;
 
 app.use(cors(
- origin: "https://employee-sand-three.vercel.app/"
+ origin:"http://localhost:5173/"
 ))
 app.use(express.json());
 

@@ -32,6 +32,11 @@ const onSubmit = async (formData) => {
 
     const data = await res.json();
     console.log(data);
+
+    if (!res.ok || !data.success) {
+  toast.error(data.message || "Something went wrong");
+  return;
+}
     
     dispatch(setStoredata(data.data)) 
     

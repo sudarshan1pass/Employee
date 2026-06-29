@@ -9,6 +9,7 @@ app.use(cors({
   origin: ["http://localhost:5173",
          "https://employee-one-psi.vercel.app"
   ],
+   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 app.use(express.json());

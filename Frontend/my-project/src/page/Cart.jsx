@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteEmployee, updateEmployee } from "../Redux/createformSlice";
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Cart = () => {
   const AllData = useSelector((state) => state.createform.storedata);
@@ -16,7 +16,7 @@ const Cart = () => {
     if (!confirmDelete) return;
     try {
       const res = await fetch(
-        `https://employee-rear.onrender.com/api/v1/deleteemp/${id}`,
+        `${API_URL}/api/v1/deleteemp/${id}`,
         {
           method: "DELETE",
         }

@@ -1,13 +1,17 @@
-const monogoose =require("mongoose");
+const mongoose = require("mongoose");
 
-const coonectDB =async()=>{
-    try{
-      await monogoose.connect(process.env.DB_URL);
-      console.log("MongoDB conncted suceffully ");
-      
-    }catch(error){
-        console.log("Database connection error ",error);
-        
-    }
-}
-module.exports=coonectDB 
+const connectDB = async () => {
+  try {
+    console.log("MONGO_URI =", process.env.MONGO_PUBLIC_URL);
+    console.log("MONGO_URL =", process.env.MONGO_PUBLIC_URL);
+
+    await mongoose.connect(process.env.MONGO_PUBLIC_URL);
+
+    console.log("✅ MongoDB Connected");
+  } catch (error) {
+    console.log("Database connection error", error);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;

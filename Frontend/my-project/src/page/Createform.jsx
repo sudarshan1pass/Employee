@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { setStoredata,deleteEmployee } from "../Redux/createformSlice";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router"
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 const Createform = () => {
@@ -22,7 +22,7 @@ const Createform = () => {
 
 const onSubmit = async (formData) => { 
   try {
-    const res = await fetch(`https://employee-rear.onrender.com/api/v1/createEmp`, {
+     const res = await fetch(`${API_URL}/api/v1/createEmp`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const onSubmit = async (formData) => {
     });
 
     const data = await res.json();
-    console.log(data);
+    console.log(data);   
 
     if (!res.ok || !data.success) {
   toast.error(data.message || "Something went wrong");

@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setAllData, updateEmployee } from "../Redux/createformSlice";
 import toast from "react-hot-toast";
-
+const API_URL = import.meta.env.VITE_API_URL;
 
 const UpdateEmp = () => {
 
@@ -38,7 +38,7 @@ const UpdateEmp = () => {
 
  const onSubmit = async (formData) => {
   const res = await fetch(
-    `https://employee-rear.onrender.com/api/v1/updateemp/${id}`,
+    `${API_URL}/api/v1/updateemp/${id}`,
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },

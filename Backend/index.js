@@ -1,3 +1,4 @@
+// console.log(process.env);
 require('dotenv').config();
 const express = require("express");
 const app = express();
@@ -6,7 +7,9 @@ const cors=require('cors');
 const port = process.env.PORT || 4000;
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173",
+         "https://employee-one-psi.vercel.app"
+  ],
   credentials: true
 }));
 app.use(express.json());

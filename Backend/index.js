@@ -7,9 +7,7 @@ const cors=require('cors');
 const port = process.env.PORT || 4000;
 
 app.use(cors({
-  origin: 
-         "https://employee-one-psi.vercel.app"
-   ,
+ origin:process.env.FRONTEND_URL,
    methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));

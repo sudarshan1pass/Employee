@@ -1,3 +1,4 @@
+console.log("🔥 DEPLOY VERSION: 30-JUNE-2026");
 require('dotenv').config();
 const express = require("express");
 const app = express();

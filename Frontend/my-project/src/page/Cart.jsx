@@ -109,7 +109,7 @@ const Cart = () => {
         <div className="flex justify-between items-center mt-6">
           <button className="p-3 rounded-full bg-white shadow-md hover:bg-cyan-100 transition-transform duration-300 hover:rotate-12 active:rotate-180">
             <Link to={`/UpdateEmp/${emp._id}`}>
-              ✏️
+              Edit
             </Link>
           </button>
 
@@ -117,7 +117,7 @@ const Cart = () => {
             onClick={() => handleDelete(emp._id)}
             className="p-3 rounded-full bg-white shadow-md hover:bg-red-100 transition cursor-pointer"
           >
-            🗑️
+            Delete
           </button>
         </div>
 

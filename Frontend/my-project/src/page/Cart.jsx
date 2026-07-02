@@ -16,7 +16,11 @@ const Cart = () => {
     if (!confirmDelete) return;
     try {
       const res = await fetch(
+
         `${API_URL}/api/v1/deleteemp/${id}`,
+
+        `employee-production-843d.up.railway.app/api/v1/deleteemp/${id}`,
+ 
         {
           method: "DELETE",
         }
